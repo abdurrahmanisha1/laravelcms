@@ -32,8 +32,8 @@ return [
     ],
 
     'google' => [
-        'client_id' => 'your client id',
-        'client_secret' => 'your client secret key',
+        'client_id' => '480609137169-87nlnnblbu114342s78dokv84reg5cdp.apps.googleusercontent.com',
+        'client_secret' => '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',
         'redirect' => 'http://localhost:8000/authorized/google/callback',
 ],
 
