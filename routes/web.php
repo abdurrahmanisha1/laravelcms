@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\LoginWithGoogleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,10 @@ Route::post('/home', [HomeController::class, 'profileupdate'])->middleware(['aut
 
 Route::get('/home', [HomeController::class, 'profileUpdateform'])->middleware(['auth', 'verified'])->name('profileupdateform');
 
+Route::get('/getalluser', [HomeController::class, 'getalluser'])->middleware(['auth', 'verified'])->name('getalluser');
+
+Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
+Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
 
 
 

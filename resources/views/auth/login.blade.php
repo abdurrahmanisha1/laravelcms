@@ -31,6 +31,11 @@
                 <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
+        <div class="flex items-center justify-end mt-4">
+                <a href="{{ url('authorized/google') }}">
+                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                </a>
+            </div>
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
@@ -38,7 +43,7 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
+          
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>

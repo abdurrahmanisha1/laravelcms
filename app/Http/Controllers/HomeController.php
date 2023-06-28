@@ -45,17 +45,30 @@ class HomeController extends Controller
     }
 
     public function profileUpdate(Request $request){
-        //validation rules
-
-    
+     
         $request->validate([
             'name' =>'required|min:4|string|max:255',
-            'email'=>'required|email|string|max:255'
+            'email'=>'required|email|string|max:255',
+            'avatar' => 'required|image'
         ]);
+
+
+        $avatarName = time().'.'.$request->avatar->getClientOriginalExtension();
+        $request->avatar->move(public_path('avatars'), $avatarName);
+  
+        Auth()->user()->update(['avatar'=>$avatarName]);
+    
+     
         $user =Auth::user();
         $user->name = $request['name'];
-        $user->email = $request['email'];
+        $user->email = $request['email'];       
         $user->save();
         return back()->with('success','Profile Updated');
+    }
+
+    public function getalluser(){
+
+        $userlist = User::all();
+        return view("userpanel.user.alluser",compact(array('userlist')));
     }
 }
