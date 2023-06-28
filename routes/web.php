@@ -26,6 +26,14 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
+Route::post('/home', [HomeController::class, 'profileupdate'])->middleware(['auth', 'verified'])->name('profileupdate');
+
+
+Route::get('/home', [HomeController::class, 'profileUpdateform'])->middleware(['auth', 'verified'])->name('profileupdateform');
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
