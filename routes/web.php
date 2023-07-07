@@ -10,6 +10,11 @@ use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\LoginWithFacebookController;
 
 
+use App\Http\Controllers\GithubController;
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +51,10 @@ Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'han
 Route::get('/redirect', [LoginWithFacebookController::class, 'redirectFacebook']);
 Route::get('/callback', [LoginWithFacebookController::class, 'facebookCallback']);
 
+Route::controller(GithubController::class)->group(function(){
+    Route::get('auth/github', 'redirectToGithub')->name('auth.github');
+    Route::get('auth/github/callback', 'handleGithubCallback');
+});
 
 
 Route::middleware('auth')->group(function () {

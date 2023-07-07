@@ -43,6 +43,13 @@
                     <i class="fa fa-facebook-square" aria-hidden="true"></i> Login with Facebook
                 </a>
             </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ route('auth.github') }}"
+                    style="background: black; padding: 10px; width: 100%; text-align: center; display: block; border-radius:4px; color: #ffffff;">
+                    Login with Github
+                </a>
+            </div> 
             
 
         <div class="flex items-center justify-end mt-4">
