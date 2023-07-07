@@ -7,6 +7,9 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\LoginWithGoogleController;
 
+use App\Http\Controllers\LoginWithFacebookController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +41,10 @@ Route::get('/getalluser', [HomeController::class, 'getalluser'])->middleware(['a
 
 Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
+
+
+Route::get('/redirect', [LoginWithFacebookController::class, 'redirectFacebook']);
+Route::get('/callback', [LoginWithFacebookController::class, 'facebookCallback']);
 
 
 

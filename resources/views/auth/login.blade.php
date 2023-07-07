@@ -37,6 +37,14 @@
                 </a>
             </div>
 
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="ml-1 btn btn-primary" href="{{ url('redirect') }}" style="margin-top: 0px !important;background: #4c6ef5;color: #ffffff;padding: 5px;border-radius:7px;" id="btn-fblogin">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i> Login with Facebook
+                </a>
+            </div>
+            
+
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">

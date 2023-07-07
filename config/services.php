@@ -37,4 +37,10 @@ return [
         'redirect' => 'http://localhost:8000/authorized/google/callback',
 ],
 
+'facebook' => [
+    'client_id' => 'mamurjorid',
+    'client_secret' => 'mamurjorsecret',
+    'redirect' => 'http://localhost:8000/callback',
+],
+
 ];
